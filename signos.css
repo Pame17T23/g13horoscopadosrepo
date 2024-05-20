@@ -4,7 +4,7 @@ aunque como se vera, tienen lo mismo en las partes que se repiten*/
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0
+    margin: 0;
   }
   
   /* <uniquifier>: Use a unique and descriptive class name
