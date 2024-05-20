@@ -3,7 +3,8 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0
+    margin: 0;
+    color: white;
   }
   
   .josefin-sans-uniquifier { 
@@ -12,10 +13,22 @@
     font-weight: 100px;
     font-style: normal;
    }
-  
+
   body {
-    font-family: "Josefin Sans", sans-serif;
-    color: black;
+    background-image: url('../Imagenes/Constelacion-fondo.jpg');
+    background-size: cover;   /* Cubre todo el fondo */
+    background-position: center;
+    background-repeat: no-repeat;   /* Evita que la imagen se repita */
+    background-attachment: fixed;   /* Fija la imagen de fondo */
+    margin: 0;
+    padding: 0;
+    height: 100vh;    /* Asegura que el body ocupa toda la altura de la ventana */
+  }
+
+  .intro {
+    background-color: hsla(0, 0%, 0%, 0.147);
+    padding: 5%;
+    margin: 5%;
   }
   
   /* Hacer todo el texto de los links negro y sin decoración*/
@@ -114,6 +127,17 @@
     border-bottom: 3px solid #9961cd;
   }
 
+  /* Personalización del carrusel */
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.616); /*Fondo semitransparente*/
+    padding: 20px;
+    border-radius: 10px;  /*Redondear las esquinas de los bordes*/
+  }
+
+  .carousel-item img {
+    height: 500px;
+    object-fit: cover;  /*Cubre el area del contenedor*/
+  }
 /* se agrega un padding alrededor del footer */
 
 footer {
@@ -131,6 +155,11 @@ footer {
   footer a:hover {
     color: #9867C5;
     border-bottom: 2px solid #9867C5;
+  }
+
+  .profiles {
+    display: flex;
+    justify-content: flex-end;
   }
 
   /* Tablets y pantallas más pequeñas */
