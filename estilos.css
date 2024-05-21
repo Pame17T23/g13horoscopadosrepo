@@ -42,6 +42,8 @@
   
   p {
     font-size: 30px;
+    margin: 10px 0;
+    text-align: justify;
   }
   
   /* Todas las imágenes deben ser del mismo tamaño que su contenedor*/
@@ -114,6 +116,19 @@
     border-bottom: 3px solid #9961cd;
   }
 
+  .grid {
+    width: 1000px;
+    display: grid;
+    grid-template-columns: 850px;
+    grid-gap: 80px;
+    padding: auto;
+    justify-content: center;
+    margin: 60px;
+  }
+
+  .grid img {
+    width: 850px;
+  }
 /* se agrega un padding alrededor del footer */
 
 footer {
