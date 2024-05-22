@@ -124,18 +124,6 @@
     border-bottom: 3px solid #9961cd;
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: 700px 700px;
-    grid-gap: 50px;
-    padding: auto;
-    justify-content: center;
-    margin: 60px;
-  }
-
-  .grid img {
-    width: 700px;
-  }
 /* se agrega un padding alrededor del footer */
 
 footer {
@@ -164,6 +152,18 @@ footer {
     justify-content: flex-end;
   }
 
+  .grid {
+    display: grid;
+    grid-template-columns: 700px 700px;
+    grid-gap: 50px;
+    padding: auto;
+    justify-content: center;
+    margin: 60px;
+  }
+
+  .grid img {
+    width: 700px;
+  }
   /* Tablets y pantallas más pequeñas */
 
 @media only screen and (max-width: 768px) {
