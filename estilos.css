@@ -52,9 +52,16 @@
     margin: 10px 0;
     line-height: 1.2;
   }
+
+  h3 {
+    text-align: center;
+    padding: 10px;
+  }
   
   p {
     font-size: 30px;
+    margin: 10px 0;
+    text-align: justify;
   }
   
   /* Todas las imágenes deben ser del mismo tamaño que su contenedor*/
@@ -72,7 +79,10 @@
     font-size: 20px;
     margin: 10px 0;
   }
-  
+  .navbar h1 {
+    color: white;
+  }
+
   .linea1 {
     text-align: center;
     text-decoration: underline;
@@ -156,17 +166,38 @@ footer {
     color: #9867C5;
     border-bottom: 2px solid #9867C5;
   }
+  
+  footer p {
+    color: white;
+  }
 
   .profiles {
     display: flex;
     justify-content: flex-end;
   }
 
+  .grid {
+    display: grid;
+    grid-template-columns: 700px 700px;
+    grid-gap: 50px;
+    padding: auto;
+    justify-content: center;
+    margin: 60px;
+  }
+
+  .grid img {
+    width: 700px;
+  }
   /* Tablets y pantallas más pequeñas */
 
 @media only screen and (max-width: 768px) {
+    .grid,
     .grid-3 {
       grid-template-columns: 1fr;
+    }
+
+    .grid img {
+      width: 500px;
     }
   }
 
@@ -177,23 +208,27 @@ footer {
     }
     /* Cambia la alineación. El logo del título se queda en la parte superior, los enlaces de navegación ahora se muestran debajo*/
 
-.navbar .flex {
+    .navbar .flex {
     flex-direction: column;
   }
 
 
 /* Cuando pasamos encima el mouse, retienen el texto blanco y cambia el borde a negro */
 
-  .navbar a:hover {
+    .navbar a:hover {
     color: white;
     border-bottom: 2px solid black;
   }
 
 /* Establecer el color púrpura para el fondo de los enlaces de navegación, redondear las esquinas de los bordes y darle algo de espaciado*/
 
-  .navbar ul {
-    background: #9867C5;
-    border-radius: 5px;
-    padding: 10px 0;
+    .navbar ul {
+      background: #9867C5;
+      border-radius: 5px;
+      padding: 10px 0;
+    }
+
+    .grid img {
+      width: 395px;
+    }
   }
-}
