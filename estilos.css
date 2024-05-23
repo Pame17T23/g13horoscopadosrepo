@@ -1,6 +1,6 @@
 /* Sobreescribe el estilo por defecto y establece el padding y el margen a cero */
 
-* {
+ * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -29,7 +29,7 @@
     background-color: hsla(0, 0%, 0%, 0.147);
     padding: 5%;
     margin: 5%;
-  }
+  } 
   
   /* Hacer todo el texto de los links negro y sin decoración*/
   a {
@@ -51,6 +51,7 @@
     font-weight: 300;
     margin: 10px 0;
     line-height: 1.2;
+    text-align: center;
   }
 
   h3 {
@@ -59,9 +60,10 @@
   }
   
   p {
-    font-size: 30px;
+    font-size: 20px;
     margin: 10px 0;
-    text-align: justify;
+    display: block;
+    text-align:center;
   }
   
   /* Todas las imágenes deben ser del mismo tamaño que su contenedor*/
@@ -75,10 +77,11 @@
   }
   
   
-  p {
+ /* p {
     font-size: 20px;
     margin: 10px 0;
-  }
+  } */
+
   .navbar h1 {
     color: white;
   }
