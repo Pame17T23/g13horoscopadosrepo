@@ -5,6 +5,7 @@ aunque como se vera, tienen lo mismo en las partes que se repiten*/
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    color: white;
   }
   
   /* <uniquifier>: Use a unique and descriptive class name
@@ -19,7 +20,15 @@ aunque como se vera, tienen lo mismo en las partes que se repiten*/
   
   body {
     font-family: "Josefin Sans", sans-serif;
-    color: black;
+    background-color: #f0f0f0;
+    background-image: url('../Imagenes/Constelacion-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
   }
   
   /* Hacer todo el texto de los links negro y sin decoración*/
@@ -27,13 +36,16 @@ aunque como se vera, tienen lo mismo en las partes que se repiten*/
     color: black;
     text-decoration: none;
   }
-  
-  
-  h1 {
+
+  .titulo h1 {
+    color: white;
     font-size: 30px;
     font-weight: 600;
+    text-align: center;
     margin: 10px 0;
+    padding-top: 80px;
     line-height: 1.2;
+    text-decoration: underline;
   }
   
   
