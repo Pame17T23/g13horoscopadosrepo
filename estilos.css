@@ -130,13 +130,13 @@
 
 .container {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: border-box;
     overflow: visible;
   }
 
   /* Aplica el color de fondo, altura y "padding"*/
 
-.navbar {
+  .navbar {
     background-color: rgb(113, 79, 223);
     height: 70px;
     padding: 0 30px;
@@ -154,7 +154,7 @@
 
   .navbar .flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 100%;
   }
@@ -282,7 +282,7 @@ footer {
     /* Cambia la alineación. El logo del título se queda en la parte superior, los enlaces de navegación ahora se muestran debajo*/
 
     .navbar .flex {
-    flex-direction: column;
+     flex-direction: column;
   }
 
 
@@ -303,5 +303,5 @@ footer {
 
     .grid img {
       width: 395px;
-    }
   }
+}

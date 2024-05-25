@@ -90,7 +90,7 @@ aunque como se vera, tienen lo mismo en las partes que se repiten*/
 
 .container {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: border-box;
     overflow: visible;
   }
 
@@ -111,7 +111,7 @@ aunque como se vera, tienen lo mismo en las partes que se repiten*/
 
   .navbar .flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 100%;
   }
@@ -156,6 +156,13 @@ aunque como se vera, tienen lo mismo en las partes que se repiten*/
     border-radius: 10px;
     box-shadow: -7px -7px 20px rgba(0, 0, 0, 0.2),
                  7px  7px 20px rgba(0, 0, 0, 0.2)
+  }
+
+  .circle h3 {
+      color: black;
+      text-align: center;
+      padding: 10px;
+
   }
 
    .grid-container a {

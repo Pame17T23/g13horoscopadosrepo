@@ -73,7 +73,7 @@
 
   .container {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: border-box;
     overflow: visible;
   }
 
@@ -95,7 +95,7 @@
 
   .navbar .flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 100%;
   }
