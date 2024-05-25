@@ -34,6 +34,12 @@ h1 {
     list-style-type: none;
   }
 
+  .container {
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow: visible;
+  }
+
   .navbar {
     background-color: rgb(113, 79, 223);
     height: 70px;
@@ -50,7 +56,7 @@ h1 {
 
 .navbar .flex {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     height: 100%;
 }
@@ -63,6 +69,10 @@ h1 {
     color: white;
     padding: 9px;
     margin: 0 10px;
+}
+
+.nav a {
+    text-decoration: none;
 }
 
 .navbar a:hover {
@@ -151,4 +161,8 @@ footer p {
 .profiles {
     display: flex;
     justify-content: flex-end;
+  }
+
+  .profiles a {
+    text-decoration: none;
   }
