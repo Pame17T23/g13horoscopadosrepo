@@ -24,8 +24,10 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         });
     }
 
+
     if (!isValid) {
         event.preventDefault();
-        alert('Por favor, complete todos los campos obligatorios.');
+        alert('Gracias por su mensaje, pronto recibirá una respuesta.');
+        this.submit();
     }
 });
