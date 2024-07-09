@@ -136,7 +136,7 @@ def modificar_visitante(codigo):
 
 @app.route("/visitantes/<int:codigo>", methods=["DELETE"])
 def eliminar_visitante(codigo):
-    # Primero, obtiene la información del visitante para encontrar la imagen
+    
     visitante = registro.consultar_visitante(codigo)
     if visitante:
 
