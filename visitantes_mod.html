@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar visitante</title>
+    <link rel="icon" type="image/x-icon" href="Imagenes/astrologia.png">
+    <link rel="stylesheet" href="visitantes_mod.css">
+</head>
+
+<!--- FALTAR VER / REVISAR / REPASAR -->
+<body>
+    <div class="logo-centrado">
+        <img src="Imagenes/horoscopo1.jpg" alt="Contacto" class="contact-image">
+    </div>
+    <h1>Modificar visitante del registro.</h1><br>
+
+    <!-- Contenedor principal que será controlado por JavaScript. Este contenedor tendrá dos formularios. -->
+    <div id="app">
+        <!-- Primer formulario: Selector de visitante. LLama a la función obtenervisitantes cuando se envíe el formulario -->
+        <form id="form-obtener-visitante">
+            <label for="codigo">Código:</label>
+            <input type="text" id="codigo" required><br>
+            <button type="submit">Modificar visitante</button> <a href="contacto_index.html">Menu principal</a>
+        </form>
+
+        <!-- Segundo formulario: se muestra solo si mostrarDatosvisitante es verdadero. Llama a la función guardarCambios -->
+        <div id="datos-visitante" style="display: none;">
+            <h2>Datos del visitante</h2>
+            <form id="form-guardar-cambios">
+                <label for="nombreModificar">Nombre:</label>
+                <input type="text" id="nombreModificar" required><br>
+
+                <label for="emailModificar">Email:</label>
+                <input type="text" id="emailModificar" required><br>
+
+                <label for="telefonoModificar">Telefono:</label>
+                <input type="number" step="0.01" id="telefonoModificar" required><br>
+
+                <label for="mensajeModificar">Mensaje:</label>
+                <input type="text" id="mensajeModificar" required><br>
+
+                <button type="submit">Guardar Cambios</button>
+                <a href="visitantes_mod.html">Cancelar</a>
+            </form>
+        </div>
+    </div>
+    <script>
+        // const URL = "http://127.0.0.1:5000/"
+        const URL = "https://pame17t23.pythonanywhere.com/"
+
+
+        // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+        //const URL = "https://USUARIO.pythonanywhere.com/"
+
+        // Variables de estado para controlar la visibilidad y los datos del formulario
+        let codigo = '';
+        let nombre = '';
+        let email = '';
+        let telefono = '';
+        let mensaje = '';
+        let mostrarDatosvisitante = false;
+
+        document.getElementById('form-obtener-visitante').addEventListener('submit', obtenervisitante);
+        document.getElementById('form-guardar-cambios').addEventListener('submit', guardarCambios);
+
+        // Se ejecuta cuando se envía el formulario de consulta. Realiza una solicitud GET a la API y obtiene los datos del inscripto correspondiente al código ingresado.
+        function obtenervisitante(event) {
+            event.preventDefault();
+            codigo = document.getElementById('codigo').value;
+            fetch(URL + 'visitantes/' + codigo)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error('Error al obtener los datos del visitante.')
+                    }
+                })
+                .then(data => {
+                    nombre = data.nombre;
+                    email = data.email;
+                    telefono = data.telefono;
+                    mensaje = data.mensaje;
+                    mostrarDatosvisitante = true; //Activa la vista del segundo formulario
+                    mostrarFormulario();
+                })
+                .catch(error => {
+                    alert('Código no encontrado.');
+                });
+        }
+
+        // Muestra el formulario con los datos del visitante
+        function mostrarFormulario() {
+            if (mostrarDatosvisitante) {
+                document.getElementById('nombreModificar').value = nombre;
+                document.getElementById('emailModificar').value = email;
+                document.getElementById('telefonoModificar').value = telefono;
+                document.getElementById('mensajeModificar').value = mensaje;
+
+                document.getElementById('datos-visitante').style.display = 'block';
+            } else {
+                document.getElementById('datos-visitante').style.display = 'none';
+            }
+        }
+        // Se usa para enviar los datos modificados del visitante al servidor.
+        function guardarCambios(event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append('codigo', codigo);
+            formData.append('nombre', document.getElementById('nombreModificar').value);
+            formData.append('email', document.getElementById('emailModificar').value);
+            formData.append('mensaje', document.getElementById('mensajeModificar').value);
+            formData.append('telefono', document.getElementById('telefonoModificar').value);
+
+            fetch(URL + 'visitantes/' + codigo, {
+                method: 'PUT',
+                body: formData,
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error('Error al guardar los cambios del visitante.')
+                    }
+                })
+                .then(data => {
+                    alert('Visitante actualizado correctamente.');
+                    limpiarFormulario();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al actualizar el visitante.');
+                });
+        }
+
+        // Restablece todas las variables relacionadas con el formulario a sus valores iniciales, lo que efectivamente "limpia" el formulario.
+        function limpiarFormulario() {
+            document.getElementById('codigo').value = '';
+            document.getElementById('nombreModificar').value = '';
+            document.getElementById('emailModificar').value = '';
+            document.getElementById('telefonoModificar').value = '';
+            document.getElementById('mensajeModificar').value = '';
+
+            codigo = '';
+            nombre = '';
+            email = '';
+            telefono = '';
+            mensaje = '';
+            mostrarDatosvisitante = false;
+
+            document.getElementById('datos-visitante').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
